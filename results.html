@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Semantic Search Results</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-900">
+  <!-- Header -->
+  <header class="flex items-center px-4 py-3 border-b bg-white">
+    <button class="text-blue-600 font-medium flex items-center gap-1">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+      </svg>
+      Explore
+    </button>
+    <div class="flex-1 text-center font-medium"> </div>
+    <button>
+      <img src="images/share.svg" alt="Share" class="w-5 h-5 text-gray-600" />
+    </button>
+  </header>
+
+     <!-- Search Bar -->
+  <div class="px-4 flex items-center mt-2 mb-2 space-x-2 search-bar-container">
+      <div class="relative flex-1">
+        <!-- Magnifying glass -->
+        <svg xmlns="http://www.w3.org/2000/svg" 
+            class="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500"
+            fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" 
+                d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 104.5 4.5a7.5 7.5 0 0012.15 12.15z" />
+        </svg>
+
+        <!-- Real input field -->
+        <input 
+          id="searchInput" 
+          type="search" 
+          placeholder="Search Wikipedia"
+          value="Can cats see in the dark?"
+          autofocus
+          enterkeyhint="search"
+          class="w-full rounded-lg pl-10 pr-8 py-2 text-gray-700 focus:outline-none"
+          style="background-color: rgba(120,120,128,0.12); font-size: 16px;"
+        />
+
+        <!-- Clear (x) button -->
+        <button id="clearBtn" class="absolute right-2 top-1/2 -translate-y-1/2 hidden">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-gray-500" fill="none" 
+               viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+
+    
+    </div>
+
+
+  <!-- Result Summary -->
+  <div class="px-4 text-md text-gray-600 mb-2 mt-4">
+    <span class="font-bold text-gray-800">5 results from 3 articles</span><br />
+    <span>Snippets pulled from original Wikipedia articles</span>
+  </div>
+
+  <!-- Cards -->
+  <div class="space-y-3 px-4 pb-6">
+    <!-- Card Example -->
+  <div id="cat-article-card" class="bg-white rounded-xl shadow-sm border p-4 cursor-pointer hover:bg-gray-50">
+      <!-- Title -->
+      <a href="full-article.html#vision" class="block focus:outline-none focus:ring-2 focus:ring-blue-500 rounded">
+        <div class="bg-white p-2 shadow rounded flex items-center gap-2 mb-3" style="box-shadow: 0 2px 8px 0 rgba(0,0,0,0.07);">
+          <div>
+            <p class="text-sm font-medium">Cat</p>
+            <p class="text-xs text-gray-500" style="font-size:13px;">Small domesticated carnivorous mammal</p>
+          </div>
+          <img src="images/cat-article-image.png" alt="thumbnail" class="w-10 h-10 rounded object-cover ml-auto" />
+        </div>
+      </a>
+      <!-- Content with fade -->
+      <div style="position:relative; max-height: 270px; overflow:hidden;">
+        <p class="text-sm leading-relaxed" style="font-size:16px; line-height:26px;">
+          <strong>Cats have excellent <span class="text-blue-600">night vision</span> and can see at one sixth the light level required for human vision. This is partly the result of cat eyes having a <span class="text-blue-600">''tapetum lucidum''</span>, which reflects any light that passes through the <span class="text-blue-600">retina</span> back into the eye, thereby increasing the eye's sensitivity to dim light. Large pupils are an adaptation to dim light.</strong> The domestic cat has slit pupils, which allow it to focus bright light without chromatic aberration. At low
+        </p>
+        <div style="position:absolute; left:0; right:0; bottom:0; height:2.5em; pointer-events:none; background:linear-gradient(to bottom, rgba(255,255,255,0) 0%, #fff 100%);"></div>
+      </div>
+    </div>
+
+    <!-- Night vision -->
+    <div id="cat-article-card" class="bg-white rounded-xl shadow-sm border p-4 cursor-pointer hover:bg-gray-50">
+      <!-- Title -->
+        <div class="bg-white p-2 shadow rounded flex items-center gap-2 mb-3" style="box-shadow: 0 2px 8px 0 rgba(0,0,0,0.07);">
+          <div>
+            <p class="text-sm font-medium">Night vision</p>
+            <p class="text-xs text-gray-500" style="font-size:13px;">ability to see in low light conditions</p>
+          </div>
+          <img src="images/night-vision-article-image.png" alt="thumbnail" class="w-10 h-10 rounded object-cover ml-auto" />
+        </div>
+      <!-- Content with fade -->
+      <div style="position:relative; max-height: 270px; overflow:hidden;">
+        <p class="text-sm leading-relaxed" style="font-size:16px; line-height:26px;">
+          Night vision requires both sufficient <span class="text-blue-600">spectral range</span>and sufficient  <span class="text-blue-600">intensity range.</span> <strong>Humans have poor night vision compared to many animals such as <span class="text-blue-600">cats</span>, <span class="text-blue-600">dogs</span>,<span class="text-blue-600">foxes</span> and
+<span class="text-blue-600">rabbits</span>, in part because the <span class="text-blue-600">human eye</span> lacks a <span class="text-blue-600">tapetum lucidum</span>, tissue behind the retina that reflects light back through the retina thus increasing the light available to the photoreceptors.</strong>
+        </p>
+        <div style="position:absolute; left:0; right:0; bottom:0; height:2.5em; pointer-events:none; background:linear-gradient(to bottom, rgba(255,255,255,0) 0%, #fff 100%);"></div>
+      </div>
+    </div>
+
+    <!-- Tapetum lucidum -->
+    <div id="cat-article-card" class="bg-white rounded-xl shadow-sm border p-4 cursor-pointer hover:bg-gray-50">
+      <!-- Title -->
+        <div class="bg-white p-2 shadow rounded flex items-center gap-2 mb-3" style="box-shadow: 0 2px 8px 0 rgba(0,0,0,0.07);">
+          <div>
+            <p class="text-sm font-medium">Tapetum lucidum</p>
+            <p class="text-xs text-gray-500" style="font-size:13px;">Layer of eye tissue which aids in night vision</p>
+          </div>
+          <img src="images/tapendum-article-image.png" alt="thumbnail" class="w-10 h-10 rounded object-cover ml-auto" />
+        </div>
+
+      <!-- Content with fade -->
+      <div style="position:relative; max-height: 270px; overflow:hidden;">
+        <p class="text-sm leading-relaxed" style="font-size:16px; line-height:26px;">
+         Young cats exhibit a blue appearance, which shifts to yellow with age, with adult coloration ranging from light orange to green. <strong> While enhancing night vision, increased light scatter within the tapetum slightly compromises visual acuity.</strong>
+        </p>
+        <div style="position:absolute; left:0; right:0; bottom:0; height:2.5em; pointer-events:none; background:linear-gradient(to bottom, rgba(255,255,255,0) 0%, #fff 100%);"></div>
+      </div>
+    </div>
+
+     <!-- Cat -->
+  <div id="cat-article-card" class="bg-white rounded-xl shadow-sm border p-4 cursor-pointer hover:bg-gray-50">
+      <!-- Title -->
+        <div class="bg-white p-2 shadow rounded flex items-center gap-2 mb-3" style="box-shadow: 0 2px 8px 0 rgba(0,0,0,0.07);">
+          <div>
+            <p class="text-sm font-medium">Cat</p>
+            <p class="text-xs text-gray-500" style="font-size:13px;">Small domesticated carnivorous mammal</p>
+          </div>
+          <img src="images/cat-article-image.png" alt="thumbnail" class="w-10 h-10 rounded object-cover ml-auto" />
+        </div>
+   
+      <!-- Content with fade -->
+      <div style="position:relative; max-height: 270px; overflow:hidden;">
+        <p class="text-sm leading-relaxed" style="font-size:16px; line-height:26px;">
+          ...cats have dozens of movable <span class="text-blue-600">whiskers (vibrissae)</span> over their body, especially their faces. <strong>These provide information on the width of gaps and on the location of objects in the dark </strong>, both by touching objects directly and by sensing air currents.
+        </p>
+        <div style="position:absolute; left:0; right:0; bottom:0; height:2.5em; pointer-events:none; background:linear-gradient(to bottom, rgba(255,255,255,0) 0%, #fff 100%);"></div>
+      </div>
+    </div>
+
+        <!-- Night vision -->
+    <div id="cat-article-card" class="bg-white rounded-xl shadow-sm border p-4 cursor-pointer hover:bg-gray-50">
+      <!-- Title -->
+        <div class="bg-white p-2 shadow rounded flex items-center gap-2 mb-3" style="box-shadow: 0 2px 8px 0 rgba(0,0,0,0.07);">
+          <div>
+            <p class="text-sm font-medium">Night vision</p>
+            <p class="text-xs text-gray-500" style="font-size:13px;">ability to see in low light conditions</p>
+          </div>
+          <img src="images/night-vision-article-image.png" alt="thumbnail" class="w-10 h-10 rounded object-cover ml-auto" />
+        </div>
+      <!-- Content with fade -->
+      <div style="position:relative; max-height: 270px; overflow:hidden;">
+        <p class="text-sm leading-relaxed" style="font-size:16px; line-height:26px;">
+         <strong>Many animals have better night vision than humans do, the result of one or more differences in the morphology and anatomy of their eyes. </strong>These include having a larger eyeball, a larger lens, a 
+        </p>
+        <div style="position:absolute; left:0; right:0; bottom:0; height:2.5em; pointer-events:none; background:linear-gradient(to bottom, rgba(255,255,255,0) 0%, #fff 100%);"></div>
+      </div>
+    </div>
+
+  <!-- Feedback Button -->
+  <div class="px-4 mb-4 text-right">
+    <button class="flex items-center gap-2 rounded-lg px-3 py-2 hover:bg-gray-50 ml-auto">
+      <span class="font-medium text-xs text-gray-600">Feedback</span>
+      <!-- Thumbs up icon -->
+      <img src="images/thumbsup.svg" alt="Thumbs up" class="w-5 h-5" />
+      <!-- Thumbs down icon -->
+      <img src="images/thumbsdown.svg" alt="Thumbs down" class="w-5 h-5" />
+    </button>
+  </div>
+  <!-- Sources -->
+  <footer class="px-0 pb-6">
+    <h2 class="text-md text-gray-800 font-bold mb-2">Sources</h2>
+    <div class="flex gap-4 overflow-x-auto scrollbar-hide pb-2" style="scroll-snap-type: x mandatory;">
+  <div class="bg-white p-4 shadow rounded flex items-center gap-2 mb-0 flex-shrink-0" style="box-shadow: 0 2px 8px 0 rgba(0,0,0,0.07); width:70vw; max-width:420px; scroll-snap-align: start;">
+        <div>
+          <p class="text-sm font-medium">Cat</p>
+          <p class="text-xs text-gray-500" style="font-size:13px;">Small domesticated carnivorous mammal</p>
+        </div>
+        <img src="images/cat-article-image.png" alt="thumbnail" class="w-16 h-16 rounded object-cover ml-auto" />
+      </div>
+  <div class="bg-white p-4 shadow rounded flex items-center gap-2 mb-0 flex-shrink-0" style="box-shadow: 0 2px 8px 0 rgba(0,0,0,0.07); width:70vw; max-width:420px; scroll-snap-align: start;">
+        <div>
+          <p class="text-sm font-medium">Night vision</p>
+          <p class="text-xs text-gray-500" style="font-size:13px;">ability to see in low light conditions</p>
+        </div>
+        <img src="images/night-vision-article-image.png" alt="thumbnail" class="w-16 h-16 rounded object-cover ml-auto" />
+      </div>
+  <div class="bg-white p-4 shadow rounded flex items-center gap-2 mb-0 flex-shrink-0" style="box-shadow: 0 2px 8px 0 rgba(0,0,0,0.07); width:70vw; max-width:420px; scroll-snap-align: start;">
+        <div>
+          <p class="text-sm font-medium">Tapetum lucidum</p>
+          <p class="text-xs text-gray-500" style="font-size:13px;">Layer of eye tissue which aids in night vision</p>
+        </div>
+        <img src="images/tapendum-article-image.png" alt="thumbnail" class="w-16 h-16 rounded object-cover ml-auto" />
+      </div>
+    </div>
+    <style>
+      .scrollbar-hide::-webkit-scrollbar { display: none; }
+      .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+  </footer>
+</body>
+</html>
